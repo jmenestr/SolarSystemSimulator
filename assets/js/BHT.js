@@ -88,15 +88,3 @@
   };
 
 })(this)
-
-
-
-// var Quad = new SolarSystem.Quad(new SolarSystem.Vector(0, 0), 500);
-// var tree = new SolarSystem.BHT(Quad);
-// var planets = [];
-// for (var i = 0; i < 5; i++) {
-//   planets.push(new SolarSystem.Body(Math.random() * 30, 
-//     new SolarSystem.Vector(Math.random() * 10, Math.random() * 40)))
-// }
-
-// planets.forEach(function(planet){ tree.insert(planet)})

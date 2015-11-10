@@ -2,9 +2,8 @@
   if (typeof root.SolarSystem == 'undefined') {
     root.SolarSystem = {};
   }
-
   var SolarSystem = root.SolarSystem;
-  var GRAVITY = 10000;
+  var GRAVITY = 1000;
   var Body = SolarSystem.Body = function(mass, pos, vel, force) {
     this.pos = pos;
     this.vel = vel;
@@ -35,6 +34,14 @@
       otherBody.mass * otherBody.pos.y) / totalMass;
     var newPos = new SolarSystem.Vector(new_x, new_y);
     return new Body(totalMass, newPos);
+  };
+
+  Body.prototype.isColliding = function(otherBody) {
+  var distance = this.pos.distance(otherBody.pos);
+    if (distance < 30) {
+      return true;
+    }
+      return false;
   };
 
   Body.prototype.addForce = function(otherBody) {
